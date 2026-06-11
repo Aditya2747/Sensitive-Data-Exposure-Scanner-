@@ -90,13 +90,7 @@ export default function App() {
               </p>
             </div>
           </div>
-          <div className="hidden items-center gap-2 rounded-full bg-emerald-50 px-3 py-1.5 text-xs font-medium text-emerald-700 ring-1 ring-emerald-200 sm:inline-flex">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-            </span>
-            Scanner Active
-          </div>
+          
         </div>
       </header>
 
@@ -107,8 +101,7 @@ export default function App() {
             Document Compliance Report
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-base text-slate-600">
-            Upload a document to detect PII, secrets, and credentials. Our advanced
-            scoring algorithm considers confidence, volume, and co-occurrence risk.
+            Upload a document to detect PII, secrets, and credentials.
           </p>
         </div>
 
@@ -141,7 +134,7 @@ export default function App() {
                 <div className="absolute inset-0 animate-spin rounded-full border-4 border-indigo-600 border-t-transparent" />
               </div>
               <p className="text-sm font-medium text-slate-600">Analyzing document…</p>
-              <p className="text-xs text-slate-400">Running 12 detection patterns with validation</p>
+              <p className="text-xs text-slate-400">Running detection patterns with validation</p>
             </div>
           </div>
         )}
