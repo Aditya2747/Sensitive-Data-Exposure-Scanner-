@@ -18,7 +18,7 @@ This repository contains two sides of the same application:
 │  Frontend (Next.js / React SPA)                             │
 │  ─────────────────────────                                  │
 │  FileDropzone → extractor → detector → riskEngine → Report  │
-│     (browser)     (browser)   (browser)   (browser)          │
+│     (browser)     (browser)   (browser)   (browser)         │
 └───────────────────────────┬─────────────────────────────────┘
                             │  POST /api/scan  (multipart)
                             ▼
@@ -181,56 +181,6 @@ pip install -r requirements.txt
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-Interactive docs:
-- Swagger UI:  http://localhost:8000/docs
-- ReDoc:      http://localhost:8000/redoc
-- Health:     http://localhost:8000/health
-
-### 3. Test the API (curl)
-
-```bash
-curl -X POST http://localhost:8000/api/scan \
-  -F "file=@sample.pdf"
-```
-
-Example response:
-```json
-{
-  "status": "success",
-  "filename": "sample.pdf",
-  "size_bytes": 2048576,
-  "total_characters": 45321,
-  "score": 97,
-  "risk_level": "CRITICAL",
-  "total_findings": 42,
-  "findings": [
-    {
-      "category": "Secrets",
-      "label": "AWS Access Key ID",
-      "count": 2,
-      "severity": "critical",
-      "confidence": "HIGH",
-      "samples": ["AKIA************YX7F"]
-    }
-  ],
-  "breakdown": {
-    "aadhaar": {
-      "count": 3,
-      "confidence": "HIGH",
-      "severity_weight": 35,
-      "confidence_factor": 1.0,
-      "volume_multiplier": 1.3,
-      "contribution": 45.5
-    }
-  },
-  "cooccurrence_bonus": 12,
-  "raw_score": 84.6,
-  "recommendations": [
-    "Aadhaar numbers discovered – UIDAI regulations restrict storage..."
-  ],
-  "elapsed_ms": 847.23
-}
-```
 
 ### 4. Configuration (Backend)
 
