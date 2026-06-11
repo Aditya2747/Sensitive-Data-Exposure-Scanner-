@@ -2,12 +2,12 @@ services:
   - type: web
     name: scanner-api
     env: python
-    buildCommand: "pip install -r requirements.txt"
+    buildCommand: "pip install -r ./backend/requirements.txt"
 
-    # Render sets $PORT; uvicorn must be given a module that exists from this directory.
-    # We run from /backend so the module path is simply `main:app`.
     workingDirectory: "./backend"
-    startCommand: "python -m uvicorn main:app --host 0.0.0.0 --port $PORT --app-dir ./backend"
+    startCommand: "python -m uvicorn main:app --host 0.0.0.0 --port $PORT"
+
+
 
 
 
