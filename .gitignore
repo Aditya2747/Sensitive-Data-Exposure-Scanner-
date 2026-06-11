@@ -1,2 +1,9 @@
 .vercel
 .env*
+node_modules/
+backend/.venv/
+dist/
+build/
+.vite/
+(.venv)
+
